@@ -12,7 +12,7 @@ function is_leapyear(year){
 
 const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
-// Solution without using Date Module
+// Solution without using Date Object
 function is_sunday(){
     let start = 3;
     for(let i = 2014; i <= 2050; i++){
@@ -29,7 +29,7 @@ function is_sunday(){
     }
 }
 
-// Solution With Date Module
+// Solution With Date Object
 
 for (let year = 2014; year <= 2050; year++)
     {
