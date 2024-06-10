@@ -4,9 +4,12 @@ function middle3(str){
     if(str.length < 3){
         return false;
     }
+    if(str.length % 2 == 0){
+         // return middle 3 charcters
+         return str.substring(str.length + 1 /2);
+    }
     else {
-        // return middle 3 charcters
-        return str.substring(str.length/2);
+        return false;
     }    
 }   
 
