@@ -1,26 +1,25 @@
-// declare function with a given string as the parameter
+// declare function with a given integer as the parameter
 
-const build_Palindrome = (str) => {
-    let flag;  // Variable to check if a palindrome is found
-    for (let i = str.length;; i++) {  // Infinite loop starting from the length of the input string
-      flag = true;  // Reset the flag for each iteration
-      for (let j = 0; j < i - j - 1; j++) {
-        // Check if the characters symmetrically positioned around the center are equal
-        if (i - j - 1 < str.length && str[j] !== str[i - j - 1]) {
-          flag = false;  // Set the flag to false if not equal
-          break;  // Break the inner loop
-        }
-      }
-      if (flag) {
-        // If a palindrome is found, complete the palindrome by adding the remaining characters
-        for (let j = str.length; j < i; j++) {
-          str += str[i - j - 1];
-        }
-        return str;  // Return the palindrome
-      }
+// Function to calculate the sum of digits
+const digitSum = (num) => {
+    let digit_sum = 0; // initialize the sum of digits
+    while(num){
+      digit_sum += num % 10; // get the last digit and sum them up
+      num = Math.floor(num / 10); // remove the last digit from the number
     }
-  }
-  
-console.log(build_Palindrome("abcddc"));  // Example usage
-console.log(build_Palindrome("122"));  // Example usage
+    return digit_sum;
+  };
 
+const digit_to_one = (num) => {
+  let result = 0; // initialize count of steps to convert number
+  while (num >= 10){ // Loop until the number becomes single digit
+    result += 1; // increment the step count
+    num = digitSum(num); 
+  }
+  return result;
+};
+
+  
+
+console.log(digit_to_one(123));
+console.log(digit_to_one(156));
