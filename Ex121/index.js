@@ -1,17 +1,15 @@
-// declare function with a given integer as the parameter
+// declare function with a given matrix as the parameter
 
-const checkAPoint = (a, b, r, x, y) => {
-  // Find the squared dist between the center of the circle and the given point
-  let dist_points = (a - x) * (a - x) + (b - y) * (b - y);
-
-  // find the squared radius
-  r *= r;
-
-  // check if (a,b) is inside a circle
-  if(dist_points < r){
-   return true;
+const isLowerTriangular = (matrix) => {
+  for(let i = 0; i < matrix.length; i++){
+    for(let j = 0; j < matrix[0].length; j++){
+      // if element is above the main diagonal and not equal to zero, return false
+      if(j > i && matrix[i][j] !== 0 ){
+        return false;
+      }
+    }
   }
-  return false;
+  return true;
 }
 
-console.log(checkAPoint(2,3, 6, 2,2));
+console.log(isLowerTriangular([[1,0,1],[2,0,0],[0,3,3]]));

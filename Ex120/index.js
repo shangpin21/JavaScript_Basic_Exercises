@@ -1,4 +1,4 @@
-// declare function with a given integer as the parameter
+// declare function with (a,b) as the given point, r as radius and (x,y) as center of the circle as the parameters
 
 const checkAPoint = (a, b, r, x, y) => {
   // Find the squared dist between the center of the circle and the given point
